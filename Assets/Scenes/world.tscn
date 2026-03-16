@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7wjmnwwnl8mt"]
+
+[ext_resource type="Texture2D" uid="uid://bf2h87vx3uiww" path="res://Assets/Scenes/Beauty GW2.png" id="1_qjgv7"]
+[ext_resource type="PackedScene" uid="uid://c40wucjf56n8y" path="res://Assets/Scenes/Player.tscn" id="2_et3q7"]
+[ext_resource type="PackedScene" uid="uid://xqxbbocl6xme" path="res://Assets/Scenes/enemy.tscn" id="3_6fknr"]
+[ext_resource type="Script" uid="uid://drxay3iljfyop" path="res://Assets/Scripts/enemyatk.gd" id="4_r8d8q"]
+[ext_resource type="AudioStream" uid="uid://drmdaydeknp8i" path="res://Assets/SFX/3-boss-generic-a-loop.mp3" id="5_rbvj5"]
+
+[node name="world" type="Node2D"]
+
+[node name="BeautyGw2" type="Sprite2D" parent="."]
+position = Vector2(-3.00004, 15.375)
+scale = Vector2(0.104167, 0.110532)
+texture = ExtResource("1_qjgv7")
+
+[node name="Player" parent="." instance=ExtResource("2_et3q7")]
+
+[node name="enemy" parent="." instance=ExtResource("3_6fknr")]
+position = Vector2(102, -6)
+script = ExtResource("4_r8d8q")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_rbvj5")
+volume_db = 3.38
+autoplay = true
+max_distance = 400.0

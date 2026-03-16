@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c40wucjf56n8y"]
+
+[ext_resource type="Script" uid="uid://ct3r6jjdf3md4" path="res://Assets/Scripts/PlayerMovement.gd" id="1_vagba"]
+[ext_resource type="Texture2D" uid="uid://by8kicujsll8h" path="res://Assets/Sprites/fih.png" id="2_apfe0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_excot"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_vagba")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 1)
+scale = Vector2(0.0659239, 0.0816233)
+texture = ExtResource("2_apfe0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_excot")
+debug_color = Color(0.0505563, 0.593413, 0.728919, 0.42)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[connection signal="child_entered_tree" from="CollisionShape2D" to="." method="_on_collision_shape_2d_child_entered_tree"]
