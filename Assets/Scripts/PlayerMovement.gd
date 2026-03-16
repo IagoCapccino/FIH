@@ -1,27 +1,13 @@
-class_name Player extends CharacterBody2D
+extends CharacterBody2D
 
-var move_speed : float = 200.0
+@export var speed : float = 200.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var direction : Vector2 = Vector2.ZERO   
-	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
-	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
-	
-	velocity = direction * move_speed 
-	pass
-	
+func _physics_process(delta):
+	var direction = Input.get_vector("left","right","up","down")
+	velocity = direction * speed
 	if direction == Vector2(1, 0):
 		$Sprite2D.flip_h = true
 	
 	if direction == Vector2(-1, 0):
 		$Sprite2D.flip_h = false
-
-	
-func _physics_process(delta):
 	move_and_slide()
