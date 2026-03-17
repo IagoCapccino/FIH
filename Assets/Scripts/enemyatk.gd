@@ -2,8 +2,8 @@ extends CharacterBody2D
 @onready var target = $"../Player"
 @export var speed = 67
 
-func _physics_process(delta):
-	var direction = (target.position-position).normalized()
+func _physics_process(_delta):
+	var direction = (target.position-position).normalized() 
 	velocity = direction * speed
 	look_at(target.position)
 	move_and_slide()

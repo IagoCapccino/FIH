@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://ct3r6jjdf3md4" path="res://Assets/Scripts/PlayerMovement.gd" id="1_vagba"]
 [ext_resource type="Texture2D" uid="uid://by8kicujsll8h" path="res://Assets/Sprites/fih.png" id="2_apfe0"]
+[ext_resource type="PackedScene" uid="uid://chldvj6ityv6q" path="res://Assets/Scenes/gun.tscn" id="3_aee6e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_excot"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1587674099]
 script = ExtResource("1_vagba")
+speed = 150
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=680991485]
 texture_filter = 1
@@ -21,4 +23,5 @@ debug_color = Color(0.0505563, 0.593413, 0.728919, 0.42)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1055483793]
 zoom = Vector2(5, 5)
 
-[connection signal="child_entered_tree" from="CollisionShape2D" to="." method="_on_collision_shape_2d_child_entered_tree"]
+[node name="Gun" parent="." unique_id=1705292106 instance=ExtResource("3_aee6e")]
+position = Vector2(1, -8)

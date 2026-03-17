@@ -1,20 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://xqxbbocl6xme"]
+[gd_scene format=3 uid="uid://xqxbbocl6xme"]
 
 [ext_resource type="Texture2D" uid="uid://by8kicujsll8h" path="res://Assets/Sprites/fih.png" id="1_50m4c"]
+[ext_resource type="Script" uid="uid://drxay3iljfyop" path="res://Assets/Scripts/enemyatk.gd" id="1_e2b7p"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qsj1j"]
 blend_mode = 2
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jult3"]
 
-[node name="enemy" type="CharacterBody2D"]
+[node name="enemy" type="CharacterBody2D" unique_id=923083262]
+script = ExtResource("1_e2b7p")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2019762787]
 texture_filter = 3
 material = SubResource("CanvasItemMaterial_qsj1j")
 position = Vector2(-3, 2)
 scale = Vector2(0.0823294, 0.0866667)
 texture = ExtResource("1_50m4c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1220480183]
 shape = SubResource("CapsuleShape2D_jult3")
