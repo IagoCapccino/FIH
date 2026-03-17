@@ -2,17 +2,27 @@
 
 [ext_resource type="Texture2D" uid="uid://d157blkwj1jck" path="res://Assets/Sprites/gun.png" id="1_31nqj"]
 [ext_resource type="Script" uid="uid://sfp7dakrfa3s" path="res://Assets/Scripts/gun.gd" id="1_ytuk4"]
+[ext_resource type="Texture2D" uid="uid://c4uww6lcwojlc" path="res://Assets/Sprites/Red-Crosshair.webp" id="3_4vdip"]
+[ext_resource type="Script" uid="uid://pealy42rw621" path="res://Assets/Scripts/crosshair.gd" id="4_imqm0"]
 
 [node name="Gun" type="Node2D" unique_id=1705292106]
 scale = Vector2(0.075, 0.075)
 script = ExtResource("1_ytuk4")
+metadata/_edit_vertical_guides_ = [3.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1273898214]
 z_index = 1
 scale = Vector2(0.274, 0.285)
 texture = ExtResource("1_31nqj")
-offset = Vector2(437.956, -93)
+offset = Vector2(291.971, 187.702)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=980190223]
-position = Vector2(266.667, -87.045)
+position = Vector2(226.667, -6.505)
 scale = Vector2(0.99999994, 1)
+
+[node name="Crosshair" type="Sprite2D" parent="." unique_id=507939790]
+position = Vector2(520, -3.8146973e-06)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("3_4vdip")
+offset = Vector2(6, 0)
+script = ExtResource("4_imqm0")

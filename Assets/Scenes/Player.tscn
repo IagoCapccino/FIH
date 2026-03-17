@@ -24,4 +24,4 @@ debug_color = Color(0.0505563, 0.593413, 0.728919, 0.42)
 zoom = Vector2(5, 5)
 
 [node name="Gun" parent="." unique_id=1705292106 instance=ExtResource("3_aee6e")]
-position = Vector2(1, -8)
+position = Vector2(1, -7)
