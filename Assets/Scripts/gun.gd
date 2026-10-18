@@ -13,8 +13,8 @@ func _process(_delta: float) -> void:
 	if rotation_degrees > 100 and rotation_degrees < 274:
 		playerSprite.flip_h = false
 		sprite.flip_v = true
-		sprite.offset.y = abs(sprite.offset.y) * -1 #Can't use scale.y 
-		gunBarrel.position.y = abs(gunBarrel.position.y)  #Bunch of BS bc I can't use scale.y
+		sprite.offset.y = abs(sprite.offset.y) * -1 #Don't use scale.y 
+		gunBarrel.position.y = abs(gunBarrel.position.y)  
 	else:
 		playerSprite.flip_h = true
 		sprite.flip_v = false
